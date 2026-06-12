@@ -1,0 +1,66 @@
+/* overlay.css — injected into all pages */
+/* Styles for the translated text boxes overlaid on manga images */
+
+.manglens-wrapper {
+  position: relative !important;
+  display: inline-block !important;
+  line-height: 0 !important;
+}
+
+.manglens-overlay {
+  position: absolute;
+  background: rgba(255, 255, 230, 0.93);
+  color: #111;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  transition: background 0.15s ease;
+  z-index: 9999;
+}
+
+.manglens-overlay:hover {
+  background: rgba(255, 245, 150, 0.98);
+  border-color: #e6b800;
+  z-index: 10000;
+}
+
+/* Original text tooltip is handled natively via title attribute */
+
+.manglens-processing {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e0c97f;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(224, 201, 127, 0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  letter-spacing: 0.5px;
+  animation: manglens-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes manglens-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.manglens-error {
+  position: absolute;
+  background: rgba(220, 30, 30, 0.85);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: help;
+  z-index: 9999;
+}
